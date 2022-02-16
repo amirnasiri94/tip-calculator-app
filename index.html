@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./images/favicon-32x32.png"
+        />
+        <title>Tip calculator app</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>
+            <img src="images/logo.svg" alt="logo" />
+        </header>
+        <main>
+          <div class="container">
+            <section class="inputs-section">
+              <section class="bill-section">
+                <label for="bill">bill</label>
+                <input type="number" name="bill" id="bill" placeholder="0" />
+              </section>
+              <section class="select-tip-section">
+                <label for="custom">select tip</label>
+                <div class="button-wrapper">
+                  <button class="btn btn--select">5%</button>
+                  <button class="btn">10%</button>
+                  <button class="btn">15%</button>
+                  <button class="btn">25%</button>
+                  <button class="btn">50%</button>
+                  <input type="number" name="custom" id="custom" placeholder="Custom" />
+                </div>
+              </section>
+              <section class="number-people-section">
+                <label for="people" class="people-lable">number of people</label>
+                <input type="number" name="people" id="people" placeholder="1" />
+              </section>
+            </section>
+            <section class="result-section">
+              <div class="result-section__wrapper">
+                <section class="amount-wrapper">
+                  <p>Tip Amount <span>/ person</span></p>
+                  <span class="result" id="amount">$0.00</span>
+                </section>
+                <section class="total-wrapper">
+                  <p>Total <span>/ person</span></p>
+                  <span class="result" id="total">$0.00</span>
+                </section>
+                <button class="btn-reset" disabled>RESET</button>
+              </div>
+            </section>
+          </div>
+        </main>
+        <script src="script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,247 @@
+/* ******************** Reset ******************** */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+input {
+    border: none;
+    outline: none;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number] {
+    -moz-appearance: textfield;
+}
+button {
+    border: none;
+    outline: none;
+}
+/* ******************** Fonts ******************** */
+@font-face {
+    font-family: "SpaceMono";
+    src: url(fonts/SpaceMono-Regular.ttf);
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "SpaceMono";
+    src: url(fonts/SpaceMono-Bold.ttf);
+    font-weight: 700;
+    font-style: normal;
+}
+/* ******************** Variables ******************** */
+:root {
+    --primary-color: hsl(183, 100%, 15%);
+    --secondary-color: hsl(172, 67%, 45%);
+    --white: hsl(0, 0%, 100%);
+    --body-bg-color: hsl(185, 41%, 84%);
+    --label-color: hsl(186, 14%, 43%);
+    --inputs-bg-color: hsl(189, 41%, 97%);
+    --span-person-color: hsl(184, 14%, 56%);
+    --btn-reset-disabled: hsl(183, 79%, 24%);
+    --error-color: hsl(13, 70%, 61%);
+}
+/* ******************** Global ******************** */
+body {
+    min-width: 375px;
+    background-color: var(--body-bg-color);
+}
+body,
+input,
+button {
+    font-family: "SpaceMono";
+}
+label {
+    display: block;
+    margin-bottom: .3rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--label-color);
+    text-transform: capitalize;
+    position: relative;
+}
+input {
+    display: block;
+    width: 100%;
+    background-color: var(--inputs-bg-color);
+    border: 2px solid transparent;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: right;
+    padding: .3rem 1rem;
+    color: var(--primary-color);
+    transition: 300ms;
+}
+input:focus {
+    border: 2px solid var(--secondary-color);
+}
+button:hover {
+    cursor: pointer;
+}
+p {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--white);
+}
+p span {
+    display: block;
+    font-size: .8rem;
+    color: var(--span-person-color);
+}
+/* ******************** Mobile ******************** */
+header img {
+    display: block;
+    margin: 3rem auto 2.5rem;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 639px;
+    margin: 0 auto;
+    background-color: var(--white);
+    border-radius: 25px 25px 0 0;
+}
+/* ******************** Mobile > inputs-section ******************** */
+.inputs-section {
+    padding: 2rem;
+}
+.bill-section {
+    margin-bottom: 2rem;
+}
+.bill-section input {
+    background-image: url(images/icon-dollar.svg);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-origin: content-box;
+    padding-left: 1rem;
+}
+.select-tip-section {
+    margin-bottom: 2rem;
+}
+.button-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.btn {
+    width: 9rem;
+    height: 3rem;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--white);
+    margin: 0 1px 1rem;
+}
+.btn:hover,
+.btn--select {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+.button-wrapper input {
+    width: 9rem;
+    height: 3rem;
+}
+.number-people-section {
+    margin-bottom: 2rem;
+}
+.number-people-section input {
+    background-image: url(images/icon-person.svg);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-origin: content-box;
+    padding-left: 1rem;
+}
+.error + input {
+    border: 2px solid var(--error-color);
+}
+.error::after {
+    content: 'Can’t be zero';
+    color: var(--error-color);
+    position: absolute;
+    right: 0;
+}
+/* ******************** Mobile > result-section ******************** */
+.result-section {
+    padding: 0 1.5rem 2rem;
+}
+.result-section__wrapper {
+    background-color: var(--primary-color);
+    border-radius: 15px;
+    padding: 2.3rem 1.5rem 1.5rem;
+}
+.amount-wrapper,
+.total-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.amount-wrapper {
+    margin-bottom: 1.25rem;
+}
+.total-wrapper {
+    margin-bottom: 2rem;
+}
+.result {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+.btn-reset {
+    width: 100%;
+    height: 3rem;
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    color: var(--primary-color);
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+.btn-reset:disabled {
+    background-color: var(--btn-reset-disabled);
+}
+/* ******************** Desktop ******************** */
+@media screen and (min-width: 920px) {
+    header img {
+        margin: 10rem auto 5rem;
+    }
+    .container {
+        flex-direction: row;
+        justify-content: space-around;
+        max-width: 920px;
+        border-radius: 25px;
+        padding: 2rem;
+        margin-bottom: 3rem;
+    }
+    /* ******************** Deskop > inputs-section ******************** */
+    .inputs-section {
+        padding: 0;
+        max-width: 379px;
+    }
+    .btn {
+        width: 7.3rem;
+    }
+    .button-wrapper input {
+        width: 7.3rem;
+        padding: 0 1rem 0 0;
+    }
+    /* ******************** Deskop > result-section ******************** */
+    .result-section {
+        padding: 0;
+        width: 413px;
+        margin-left: 3rem;
+    }
+    .total-wrapper {
+        margin-bottom: 7.6rem;
+    }
+    .result {
+        font-size: 3rem;
+    }
+}
